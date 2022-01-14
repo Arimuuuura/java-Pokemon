@@ -1,7 +1,13 @@
 import java.util.Random;
 
 class Battle {
-    public void battle (Monster [] monsters) {
+    public static void battle (Monster [] monsters) {
+        System.out.println("----------");
+        System.out.println("----------");
+        System.out.println(monsters[0].getName() + " vs " + monsters[1].getName() + " バトル開始");
+        System.out.println("----------");
+        System.out.println("----------");
+
         int index = 1;
         while (monsters[0].getHp() > 0 && monsters[1].getHp() > 0) {
             System.out.println(index + "ターン");
