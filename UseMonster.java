@@ -15,5 +15,9 @@ class UseMonster {
         }
 
         Battle.battle(monsters);
+
+        for (int i = 0; i < 2; i++) {
+            monsters[i].printData();
+        }
     }
 }

@@ -1,29 +1,37 @@
 import java.util.Random;
+import java.util.Scanner;
 
 class Battle {
     public static void battle (Monster [] monsters) {
-        System.out.println("----------");
-        System.out.println("----------");
-        System.out.println(monsters[0].getName() + " vs " + monsters[1].getName() + " バトル開始");
-        System.out.println("----------");
-        System.out.println("----------");
-
         int index = 1;
+
+        if (!preBattle(monsters)) return;
+
         while (monsters[0].getHp() > 0 && monsters[1].getHp() > 0) {
             System.out.println(index + "ターン");
             attack(monsters);
             index += 1;
         }
 
-        if (monsters[0].getHp() > 0) {
-            System.out.println(monsters[0].getName() + " の勝利！！");
-            monsters[0].setLevel(monsters[0].getLevel() + 1);
-            System.out.println(monsters[0].getName() + " の Level が " + monsters[0].getLevel() + " になった");
-        } else if (monsters[1].getHp() > 0) {
-            System.out.println(monsters[1].getName() + " の勝利！！");
-            monsters[1].setLevel(monsters[1].getLevel() + 1);
-            System.out.println(monsters[1].getName() + " の Level が " + monsters[1].getLevel() + " になった");
+        levelUp(monsters);
+    }
+
+    public static boolean preBattle (Monster [] monsters) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println(monsters[0].getName() + " vs " + monsters[1].getName() + " 実施しますか？( yes / no )");
+        String isBattle = scan.next();
+
+        if (isBattle.equals("yes")) {
+            System.out.println();
+            System.out.println("==========");
+            System.out.println(monsters[0].getName() + " vs " + monsters[1].getName() + " バトル開始");
+            System.out.println("==========");
+            System.out.println();
+            return true;
         }
+
+        System.out.println(monsters[0].getName() + " と " + monsters[1].getName() + "は仲良くなった");
+        return false;
     }
 
     public static void attack (Monster [] monsters) {
@@ -57,6 +65,20 @@ class Battle {
                 }
                 System.out.println(monsters[0].getName() + "のHPは" + monsters[0].getHp() + "になった");
                 break;
+        }
+    }
+
+    public static void levelUp (Monster [] monsters) {
+        if (monsters[0].getHp() > 0) {
+            System.out.println(monsters[1].getName() + " は瀕死になった..");
+            System.out.println(monsters[0].getName() + " の勝利！！");
+            monsters[0].setLevel(monsters[0].getLevel() + 1);
+            System.out.println(monsters[0].getName() + " の Level が " + monsters[0].getLevel() + " になった");
+        } else if (monsters[1].getHp() > 0) {
+            System.out.println(monsters[0].getName() + " は瀕死になった..");
+            System.out.println(monsters[1].getName() + " の勝利！！");
+            monsters[1].setLevel(monsters[1].getLevel() + 1);
+            System.out.println(monsters[1].getName() + " の Level が " + monsters[1].getLevel() + " になった");
         }
     }
 }
