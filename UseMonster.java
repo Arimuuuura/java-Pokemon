@@ -4,6 +4,10 @@ class UseMonster {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
+        // Trainer インスタンス生成
+        Trainer trainer = new Trainer();
+        trainer.printData();
+
         // Monster インスタンス生成
         System.out.println("バトルするポケモンを2匹登録してください");
 
