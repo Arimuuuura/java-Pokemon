@@ -1,4 +1,4 @@
-class Characters {
+abstract class Characters {
     private String name;
     private int level = 1;
 
@@ -17,4 +17,6 @@ class Characters {
     public int getLevel () {
         return this.level;
     }
+
+    abstract public void printData ();
 }
