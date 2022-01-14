@@ -18,5 +18,5 @@ abstract class Characters {
         return this.level;
     }
 
-    abstract public void printData ();
+    abstract public void setInfo ();
 }
