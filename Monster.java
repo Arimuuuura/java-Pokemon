@@ -2,11 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-class Monster {
-    private String name;
+class Monster extends Characters {
     private String attribute;
     private int hp = 100;
-    private int level = 1;
     private List<String> skills = new ArrayList<>();
 
     Scanner scan = new Scanner(System.in);
@@ -24,14 +22,6 @@ class Monster {
         setSkills();
     }
 
-    public void setName (String name) {
-        this.name = name;
-    }
-
-    public String getName () {
-        return this.name;
-    }
-
     public void setAttribute (String attribute) {
         this.attribute = attribute;
     }
@@ -42,14 +32,6 @@ class Monster {
 
     public int getHp () {
         return this.hp;
-    }
-
-    public void setLevel (int level) {
-        this.level = level;
-    }
-
-    public int getLevel () {
-        return this.level;
     }
 
     public void setSkills () {
@@ -66,6 +48,6 @@ class Monster {
 
     public void printData () {
         System.out.println("[ポケモン情報]");
-        System.out.println("名前 : " + this.name + ", 属性 : " + this.attribute + ", 技 : " + skills + ", HP : " + this.hp + ", Level : " + this.level);
+        System.out.println("名前 : " + getName() + ", 属性 : " + this.attribute + ", 技 : " + skills + ", HP : " + this.hp + ", Level : " + getLevel());
     }
 }
