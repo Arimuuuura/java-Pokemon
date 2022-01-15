@@ -55,5 +55,6 @@ class Monster extends Characters {
     public void printMonster () {
         System.out.println("[ポケモン情報]");
         System.out.println("名前 : " + getName() + ", 属性 : " + this.attribute + ", 技 : " + skills + ", HP : " + this.hp + ", Level : " + getLevel());
+        System.out.println();
     }
 }
