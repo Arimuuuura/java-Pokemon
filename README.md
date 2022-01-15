@@ -2,12 +2,12 @@
 
 ## Required
 You must have Java installed on your computer.
-```aidl
+```
 $ java -version
 ```
 
 ## Operating Procedure
-```aidl
+```
 $ javac UseMonster.java
 $ java UseMonster
 ```
@@ -17,7 +17,7 @@ After executing the above command
 
 ### 1. Answer the questions about you.
 ***Questions***
-```aidl
+```
 1. あなたの名前は何ですか？
 2. ポケモンの名前は何ですか？
 3. 属性は何ですか？
@@ -29,10 +29,12 @@ After executing the above command
 ### 3. If you want to play against them, type "yes" and press Enter.
 ### 4. Please observe until the match is over.
 
-`
-＊ The moves you perform, the order in which you attack, and the size of the damage are random.
+＊`
+The moves you perform, the order in which you attack, and the size of the damage are random.
 `
 
 Register your favorite Pokémon.
+
 Have fun playing Pokémon against each other.
+
 Thank you.
