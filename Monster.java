@@ -46,7 +46,7 @@ class Monster extends Characters {
         }
     }
 
-    public List getSkills () {
+    public List<String> getSkills () {
         return skills;
     }
 
