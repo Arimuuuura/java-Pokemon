@@ -9,19 +9,6 @@ class Monster extends Characters {
 
     Scanner scan = new Scanner(System.in);
 
-    Monster () {
-//        System.out.println("ポケモンの名前は何ですか？");
-//        String pokeName = scan.next();
-//        setName(pokeName);
-//
-//        System.out.println("ポケモンの属性は何ですか？");
-//        String pokeAttr = scan.next();
-//        setAttribute(pokeAttr);
-//
-//        System.out.println("技を2種類登録してください:");
-//        setSkills();
-    }
-
     public void setAttribute (String attribute) {
         this.attribute = attribute;
     }
@@ -51,21 +38,22 @@ class Monster extends Characters {
     }
 
     public void setInfo () {
+        // ポケモンの名前を登録
         System.out.println("ポケモンの名前は何ですか？");
         String pokeName = scan.next();
         setName(pokeName);
 
-        System.out.println("ポケモンの属性は何ですか？");
+        // ポケモンの属性を登録
+        System.out.println("属性は何ですか？");
         String pokeAttr = scan.next();
         setAttribute(pokeAttr);
 
-        System.out.println("技を2種類登録してください:");
+        // ポケモンの技を2種類登録
         setSkills();
+    }
 
+    public void printMonster () {
         System.out.println("[ポケモン情報]");
         System.out.println("名前 : " + getName() + ", 属性 : " + this.attribute + ", 技 : " + skills + ", HP : " + this.hp + ", Level : " + getLevel());
-        System.out.println();
-        System.out.println("----------");
-        System.out.println();
     }
 }
