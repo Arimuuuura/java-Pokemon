@@ -4,6 +4,10 @@ class Trainer extends Characters {
     Scanner scan = new Scanner(System.in);
     private Monster monster = new Monster();
 
+    public Monster getMonster () {
+        return this.monster;
+    }
+
     public void setInfo () {
         System.out.println("あなたの名前は何ですか？");
         String name = scan.next();
