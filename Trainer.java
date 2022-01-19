@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Trainer extends Characters {
+class Trainer extends Characters implements Recovery {
     Scanner scan = new Scanner(System.in);
     private Monster monster = new Monster();
     private boolean isAdventure;
@@ -30,11 +30,17 @@ class Trainer extends Characters {
         Scanner scan = new Scanner(System.in);
         System.out.println("冒険に出かけますか？( yes / no )");
         String isAdventure = scan.next();
+
         if (!isAdventure.equals("yes")) {
             System.out.println(getName() + " は、静かに家路についた。");
             this.isAdventure = false;
             return;
         }
+
+        if (monster.getHp() == 0) {
+            this.recovery();
+        }
+
         System.out.println();
         System.out.println("==========");
         System.out.println(getName() + " は、冒険に出かけた。");
@@ -45,5 +51,14 @@ class Trainer extends Characters {
 
     public boolean getIsAdventure () {
         return this.isAdventure;
+    };
+
+    public void recovery () {
+        monster.setHp(100);
+        System.out.println();
+        System.out.println("==========");
+        System.out.println(monster.getName() + "のHPは回復した。");
+        System.out.println("==========");
+        System.out.println();
     };
 }

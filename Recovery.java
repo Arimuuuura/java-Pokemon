@@ -1,0 +1,3 @@
+interface Recovery {
+    void recovery ();
+}
