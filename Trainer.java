@@ -3,6 +3,7 @@ import java.util.Scanner;
 class Trainer extends Characters {
     Scanner scan = new Scanner(System.in);
     private Monster monster = new Monster();
+    private boolean isAdventure;
 
     public Monster getMonster () {
         return this.monster;
@@ -24,4 +25,25 @@ class Trainer extends Characters {
         System.out.println("----------");
         System.out.println();
     }
+
+    public void setIsAdventure () {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("冒険に出かけますか？( yes / no )");
+        String isAdventure = scan.next();
+        if (!isAdventure.equals("yes")) {
+            System.out.println(getName() + " は、静かに家路についた。");
+            this.isAdventure = false;
+            return;
+        }
+        System.out.println();
+        System.out.println("==========");
+        System.out.println(getName() + " は、冒険に出かけた。");
+        System.out.println("==========");
+        System.out.println();
+        this.isAdventure = true;
+    }
+
+    public boolean getIsAdventure () {
+        return this.isAdventure;
+    };
 }
